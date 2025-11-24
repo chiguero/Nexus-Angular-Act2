@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CafeteriaService } from '../../services/cafeteria.service';
+import { CafeteriaService } from '../../../services/cafeteria.service';
 
 @Component({
   selector: 'app-datos-pedido',
