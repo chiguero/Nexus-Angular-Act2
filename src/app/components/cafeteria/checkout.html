@@ -1,0 +1,138 @@
+<div class="container my-5">
+  <h2 class="mb-4">🛒 Tu Pedido</h2>
+
+  @if (pedidoItems.length === 0) {
+    <div class="alert alert-info">
+      Tu pedido está vacío. 
+      <a routerLink="/cafeteria/productos" class="alert-link">Ver productos</a>
+    </div>
+  } @else {
+    <div class="row">
+      <!-- Lista de productos -->
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title mb-3">Productos</h5>
+            
+            @for (item of pedidoItems; track item.producto.id) {
+              <div class="pedido-item">
+                <img [src]="item.producto.imagen" [alt]="item.producto.nombre" class="pedido-img">
+                <div class="pedido-info">
+                  <h6>{{ item.producto.nombre }}</h6>
+                  <p class="text-muted small mb-0">${{ item.producto.precio.toFixed(2) }} c/u</p>
+                </div>
+                <div class="pedido-cantidad">
+                  <button 
+                    class="btn btn-sm btn-outline-secondary" 
+                    (click)="actualizarCantidad(item.producto.id, item.cantidad - 1)">
+                    -
+                  </button>
+                  <span class="mx-3">{{ item.cantidad }}</span>
+                  <button 
+                    class="btn btn-sm btn-outline-secondary" 
+                    (click)="actualizarCantidad(item.producto.id, item.cantidad + 1)">
+                    +
+                  </button>
+                </div>
+                <div class="pedido-subtotal">
+                  <strong>${{ (item.producto.precio * item.cantidad).toFixed(2) }}</strong>
+                </div>
+                <button 
+                  class="btn btn-sm btn-outline-danger" 
+                  (click)="eliminarProducto(item.producto.id)">
+                  ❌
+                </button>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen y opciones -->
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Opciones de servicio</h5>
+            
+            <div class="mb-3">
+              <label class="form-label fw-bold">Tipo de servicio</label>
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  name="tipoServicio" 
+                  id="mesa" 
+                  value="mesa"
+                  [(ngModel)]="tipoServicio">
+                <label class="form-check-label" for="mesa">
+                  🪑 Servicio a mesa
+                </label>
+              </div>
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  name="tipoServicio" 
+                  id="mostrador" 
+                  value="mostrador"
+                  [(ngModel)]="tipoServicio">
+                <label class="form-check-label" for="mostrador">
+                  🥤 Recoger en mostrador
+                </label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold">Método de pago</label>
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  name="metodoPago" 
+                  id="efectivo" 
+                  value="efectivo"
+                  [(ngModel)]="metodoPago">
+                <label class="form-check-label" for="efectivo">
+                  💵 Efectivo al recoger
+                </label>
+              </div>
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  name="metodoPago" 
+                  id="online" 
+                  value="online"
+                  [(ngModel)]="metodoPago">
+                <label class="form-check-label" for="online">
+                  💳 Pagar ahora
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Resumen</h5>
+            <div class="d-flex justify-content-between mb-2">
+              <span>Subtotal:</span>
+              <span>${{ total.toFixed(2) }}</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-3">
+              <strong>Total:</strong>
+              <strong class="text-primary fs-4">${{ total.toFixed(2) }}</strong>
+            </div>
+            <button class="btn btn-primary w-100" (click)="continuarAPago()">
+              Continuar con el pedido
+            </button>
+            <a routerLink="/cafeteria/productos" class="btn btn-outline-secondary w-100 mt-2">
+              Agregar más productos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

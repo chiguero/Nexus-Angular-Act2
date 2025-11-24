@@ -1,0 +1,32 @@
+.pedido-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.pedido-item:last-child {
+  border-bottom: none;
+}
+
+.pedido-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.pedido-info {
+  flex: 1;
+}
+
+.pedido-cantidad {
+  display: flex;
+  align-items: center;
+}
+
+.pedido-subtotal {
+  min-width: 80px;
+  text-align: right;
+}
