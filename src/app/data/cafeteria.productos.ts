@@ -6,7 +6,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Café Espresso',
     categoria: 'cafe',
     precio: 2.50,
-    imagen: 'assets/images/cafeteria/espresso.jpg',
+    imagen: '/assets/images/cafeteria/espresso.jpg',
     descripcion: 'Café espresso italiano intenso y aromático'
   },
   {
@@ -14,7 +14,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Cappuccino',
     categoria: 'cafe',
     precio: 3.50,
-  imagen: 'assets/images/cafeteria/capuccino.jpg',
+  imagen: '/assets/images/cafeteria/capuccino.jpg',
     descripcion: 'Espresso con leche vaporizada y espuma'
   },
   {
@@ -22,7 +22,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Latte',
     categoria: 'cafe',
     precio: 3.80,
-    imagen: 'assets/images/cafeteria/latte.jpg',
+    imagen: '/assets/images/cafeteria/latte.jpg',
     descripcion: 'Café con leche suave y cremoso'
   },
   {
@@ -30,7 +30,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Croissant',
     categoria: 'reposteria',
     precio: 2.20,
-    imagen: 'assets/images/cafeteria/croissant.jpg',
+    imagen: '/assets/images/cafeteria/croissant.jpg',
     descripcion: 'Croissant francés recién horneado'
   },
   {
@@ -38,7 +38,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Tarta de Zanahoria',
     categoria: 'reposteria',
     precio: 4.50,
-    imagen: 'assets/images/cafeteria/tarta-zanahoria.jpg',
+    imagen: '/assets/images/cafeteria/tarta-zanahoria.jpg',
     descripcion: 'Tarta casera con frosting de queso'
   },
   {
@@ -46,7 +46,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Brownie',
     categoria: 'reposteria',
     precio: 3.50,
-    imagen: 'assets/images/cafeteria/brownie.jpg',
+    imagen: '/assets/images/cafeteria/brownie.jpg',
     descripcion: 'Brownie de chocolate con nueces'
   },
   {
@@ -54,7 +54,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Zumo Natural',
     categoria: 'bebida',
     precio: 4.00,
-    imagen: 'assets/images/cafeteria/zumo.jpg',
+    imagen: '/assets/images/cafeteria/zumo.jpg',
     descripcion: 'Zumo de naranja recién exprimido'
   },
   {
@@ -62,7 +62,7 @@ export const PRODUCTOS_CAFETERIA: Producto[] = [
     nombre: 'Té Verde',
     categoria: 'bebida',
     precio: 2.80,
-    imagen: 'assets/images/cafeteria/te-verde.jpg',
+    imagen: '/assets/images/cafeteria/te-verde.jpg',
     descripcion: 'Té verde orgánico japonés'
   }
 ];

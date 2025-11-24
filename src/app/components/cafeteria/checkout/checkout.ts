@@ -15,7 +15,7 @@ import { PedidoItem } from '../../../models/cafeteria.model';
 export class Checkout implements OnInit {
   pedidoItems: PedidoItem[] = [];
   tipoServicio: 'mesa' | 'mostrador' = 'mesa';
-  metodoPago: 'online' | 'efectivo' = 'efectivo';
+  // metodoPago removed — payment method selection moved/removed
 
   constructor(
     private cafeteriaService: CafeteriaService,
@@ -48,7 +48,7 @@ export class Checkout implements OnInit {
     
     // Guardar preferencias en sessionStorage
     sessionStorage.setItem('tipoServicio', this.tipoServicio);
-    sessionStorage.setItem('metodoPago', this.metodoPago);
+    // payment method selection removed; DatosPedido will use default if needed
     
     this.router.navigate(['/cafeteria/datos-pedido']);
   }
