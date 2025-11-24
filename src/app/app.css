@@ -1,0 +1,162 @@
+/* src/app/app.css */
+:root {
+  --color-primary: #6B4E71; /* requested purple */
+  --color-primary-dark: #543e59; /* darker purple for hover */
+  --color-primary-light: #8c6994; /* lighter purple for secondary */
+  --color-primary-fade: rgba(107, 78, 113, 0.15); /* transparent purple */
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --bg: #f6f7f9;
+  --card-shadow: 0 8px 24px rgba(11,15,30,0.06);
+  --btn-shadow: 0 4px 12px rgba(107, 78, 113, 0.2);
+}
+
+:host {
+  display: block;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color-text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(107,78,113,0.06);
+}
+
+.navbar-brand {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  font-size: 1.1rem;
+}
+
+.nav-link {
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Button styles */
+.btn {
+  transition: all 0.2s ease-in-out !important;
+  font-weight: 500 !important;
+}
+
+/* Primary buttons */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+  box-shadow: var(--btn-shadow) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(107, 78, 113, 0.25) !important;
+}
+
+/* Outline primary buttons */
+.btn-outline-primary {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary-fade) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary buttons */
+.btn-outline-secondary {
+  border-color: var(--color-primary-light) !important;
+  color: var(--color-primary-light) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-primary-fade) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Danger buttons with purple tint */
+.btn-outline-danger {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  border-color: #dc3545 !important;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Cards */
+.card.book-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(11,15,30,0.09);
+}
+
+.card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  object-fit: cover;
+  height: 320px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+/* layout adjustments for fixed header/footer */
+.content {
+  /* leave space for fixed navbar + footer to avoid overlap */
+  padding-top: 84px; /* adjust to navbar height */
+  padding-bottom: 84px; /* adjust to footer height */
+}
+
+.navbar.fixed-top {
+  z-index: 1030; /* above page content */
+}
+
+footer.fixed-bottom {
+  z-index: 1030;
+  background: linear-gradient(180deg, #ffffff, #fbfbfc);
+  border-top: 1px solid rgba(107,78,113,0.06);
+  box-shadow: 0 -6px 18px rgba(11,15,30,0.04);
+}
+
+/* small helpers */
+.badge.rounded-pill {
+  font-weight: 600;
+  background-color: var(--color-primary) !important;
+}
+
+/* a little refinement for lists and subtitles */
+.card-subtitle {
+  color: var(--color-muted);
+  font-weight: 500;
+}

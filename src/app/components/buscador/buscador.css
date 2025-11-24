@@ -1,0 +1,27 @@
+.card-img-top { height: 220px; object-fit: cover; }
+
+/* cover-wrap keeps the card's top area height; inner .book-cover is smaller ("más chata") and centered */
+.cover-wrap {
+	height: 220px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.book-cover {
+	height: 100%;
+	width: auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+	object-fit: contain;
+	border-radius: 8px;
+}
+
+/* Card info area: white background with 80% opacity */
+.card-body {
+	background-color: rgba(255, 255, 255, 0.8);
+}

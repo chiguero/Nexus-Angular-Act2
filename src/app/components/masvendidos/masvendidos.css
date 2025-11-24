@@ -1,0 +1,28 @@
+.book-card { border-radius: 12px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
+.card-img-top { height: 240px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+
+/* cover-wrap keeps the card's top area height; inner .book-cover is smaller ("más chata") and centered */
+.cover-wrap {
+	height: 240px;                /* same height as .card-img-top used previously */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;             /* hide overflowing parts of the inner image */
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.book-cover {
+	height: 100%;                /* fill the wrapper height (same as card top) */
+	width: auto;               /* width may be smaller than the wrapper */
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;           /* center horizontally when width < wrapper */
+	object-fit: contain;      /* show full cover without cropping */
+	border-radius: 8px;
+}
+
+/* Card info area: white background with 80% opacity */
+.card-body {
+	background-color: rgba(255, 255, 255, 0.8);
+}

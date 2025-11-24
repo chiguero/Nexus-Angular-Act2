@@ -1,0 +1,30 @@
+<!-- src/app/app.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">{{ title() }}</a>
+
+    <div class="d-flex align-items-center">
+      <a class="nav-link me-3" routerLink="/masvendidos">Más vendidos</a>
+      <a class="nav-link me-3" routerLink="/buscador">Buscar</a>
+
+      <a class="btn btn-outline-primary position-relative" routerLink="/carrito">
+        🛒 Carrito
+        <span class="badge bg-danger rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center"
+              *ngIf="(items$ | async)?.length">
+          {{ (items$ | async)?.length }}
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="py-4 content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-light text-muted py-3 fixed-bottom">
+  <div class="container text-center small">
+    © Nexus Books — Simulación de e-commerce · Diseño con Bootstrap
+  </div>
+</footer>
