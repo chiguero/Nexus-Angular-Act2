@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PRODUCTOS_CAFETERIA } from '../../../data/cafeteria.productos';
 import { Producto } from '../../../models/cafeteria.model';
 import { CafeteriaService } from '../../../services/cafeteria.service';
+import { ProductosService } from '../../../services/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -12,11 +12,34 @@ import { CafeteriaService } from '../../../services/cafeteria.service';
   templateUrl: './productos.html',
   styleUrls: ['./productos.css']
 })
-export class Productos {
-  productos: Producto[] = PRODUCTOS_CAFETERIA;
+export class Productos implements OnInit {
+  productos: Producto[] = [];
   categoriaSeleccionada: string = 'todas';
+  cargando: boolean = true;
+  error: string = '';
 
-  constructor(private cafeteriaService: CafeteriaService) {}
+  constructor(
+    private cafeteriaService: CafeteriaService,
+    private productosService: ProductosService
+  ) {}
+
+  ngOnInit() {
+    this.cargarProductos();
+  }
+
+  cargarProductos() {
+    this.productosService.getProductos().subscribe({
+      next: (data) => {
+        this.productos = data;
+        this.cargando = false;
+      },
+      error: (err) => {
+        console.error('Error al cargar productos:', err);
+        this.error = 'No se pudieron cargar los productos';
+        this.cargando = false;
+      }
+    });
+  }
 
   get productosFiltrados(): Producto[] {
     if (this.categoriaSeleccionada === 'todas') {
