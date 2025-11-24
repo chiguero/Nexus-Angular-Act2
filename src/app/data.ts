@@ -17,7 +17,7 @@ export const LIBROS: Libro[] = [
     anio: 1967,
     categoria: 'Novela',
     precio: 22.5,
-    imagen: 'assets/images/cien-anios.jpg',
+  imagen: 'assets/images/portadas/cien-anios.jpg',
     descripcion: 'Una épica familiar y mágica ambientada en Macondo.'
   },
   {
@@ -27,7 +27,7 @@ export const LIBROS: Libro[] = [
     anio: 1943,
     categoria: 'Infantil',
     precio: 14.0,
-    imagen: 'assets/images/principito.jpg',
+  imagen: 'assets/images/portadas/principito.jpg',
     descripcion: 'Un clásico que habla de amistad, pérdida y asombro.'
   },
   {
@@ -37,7 +37,7 @@ export const LIBROS: Libro[] = [
     anio: 1949,
     categoria: 'Distopía',
     precio: 18.0,
-    imagen: 'assets/images/1984.jpg',
+  imagen: 'assets/images/portadas/1984.jpg',
     descripcion: 'Una mirada inquietante a un futuro totalitario.'
   },
   {
@@ -47,7 +47,7 @@ export const LIBROS: Libro[] = [
     anio: 1605,
     categoria: 'Clásico',
     precio: 28.0,
-    imagen: 'assets/images/quijote.jpg',
+  imagen: 'assets/images/portadas/quijote.jpg',
     descripcion: 'La aventura del caballero andante más famoso de la literatura.'
   },
   {
@@ -57,7 +57,7 @@ export const LIBROS: Libro[] = [
     anio: 2001,
     categoria: 'Misterio',
     precio: 20.0,
-    imagen: 'assets/images/sombra-viento.jpg',
+  imagen: 'assets/images/portadas/sombra-viento.jpg',
     descripcion: 'Novela de misterio y libros perdidos en la Barcelona de posguerra.'
   }
 ];
