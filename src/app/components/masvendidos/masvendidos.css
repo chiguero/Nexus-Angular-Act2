@@ -1,28 +1,56 @@
-.book-card { border-radius: 12px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
-.card-img-top { height: 240px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+.book-card { 
+  border-radius: 12px; 
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); 
+}
+
+.card-img-top { 
+  height: 240px; 
+  object-fit: cover; 
+  border-top-left-radius: 12px; 
+  border-top-right-radius: 12px; 
+}
 
 /* cover-wrap keeps the card's top area height; inner .book-cover is smaller ("más chata") and centered */
 .cover-wrap {
-	height: 240px;                /* same height as .card-img-top used previously */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;             /* hide overflowing parts of the inner image */
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: relative;
+}
+
+/* Fondo difuminado con la misma imagen */
+.cover-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.8);
+  transform: scale(1.1);
+  z-index: 0;
 }
 
 .book-cover {
-	height: 100%;                /* fill the wrapper height (same as card top) */
-	width: auto;               /* width may be smaller than the wrapper */
-	max-width: 100%;
-	display: block;
-	margin: 0 auto;           /* center horizontally when width < wrapper */
-	object-fit: contain;      /* show full cover without cropping */
-	border-radius: 8px;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Card info area: white background with 80% opacity */
 .card-body {
-	background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
