@@ -14,7 +14,7 @@
           <p class="card-subtitle mb-2 text-muted small">{{ libro.autor }} • {{ libro.anio }}</p>
           <p class="flex-grow-1 small">{{ libro.descripcion }}</p>
           <div class="d-flex justify-content-between align-items-center mt-3">
-            <strong class="fs-6">${{ libro.precio.toFixed(2) }}</strong>
+            <strong class="fw-bold fs-5 text-primary">${{ libro.precio.toFixed(2) }}</strong>
             <button class="btn btn-success btn-sm" (click)="addToCart(libro)">Añadir al carrito</button>
           </div>
         </div>
