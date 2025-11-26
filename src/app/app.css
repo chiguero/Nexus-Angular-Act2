@@ -1,9 +1,9 @@
 /* src/app/app.css */
 :root {
-  --color-primary: #6B4E71; /* requested purple */
-  --color-primary-dark: #543e59; /* darker purple for hover */
-  --color-primary-light: #8c6994; /* lighter purple for secondary */
-  --color-primary-fade: rgba(107, 78, 113, 0.15); /* transparent purple */
+  --color-primary: #2563EB; 
+  --color-primary-dark: #1D4ED8; 
+  --color-primary-light: #3B82F6; 
+  --color-primary-fade: rgba(37, 99, 235, 0.15); 
   --color-text: #1f2937;
   --color-muted: #6b7280;
   --bg: #f6f7f9;
@@ -93,7 +93,6 @@ body {
   border-color: var(--color-primary) !important;
 }
 
-/* Danger buttons with purple tint */
 .btn-outline-danger {
   border-color: #dc3545 !important;
   color: #dc3545 !important;
@@ -149,13 +148,11 @@ footer.fixed-bottom {
   box-shadow: 0 -6px 18px rgba(11,15,30,0.04);
 }
 
-/* small helpers */
 .badge.rounded-pill {
   font-weight: 600;
   background-color: var(--color-primary) !important;
 }
 
-/* a little refinement for lists and subtitles */
 .card-subtitle {
   color: var(--color-muted);
   font-weight: 500;

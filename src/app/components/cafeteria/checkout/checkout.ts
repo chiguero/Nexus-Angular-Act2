@@ -15,7 +15,6 @@ import { PedidoItem } from '../../../models/cafeteria.model';
 export class Checkout implements OnInit {
   pedidoItems: PedidoItem[] = [];
   tipoServicio: 'mesa' | 'mostrador' = 'mesa';
-  // metodoPago removed — payment method selection moved/removed
 
   constructor(
     private cafeteriaService: CafeteriaService,
